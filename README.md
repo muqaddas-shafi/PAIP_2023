@@ -36,7 +36,7 @@ Tumor cellularity prediction in pancreatic cancer (supervised learning) and colo
 * Labels will be provided for training datasets only.
 * Organ information will be given in the name of the file.  
 
-## Our Approach:
+## Approach:
 * <ins>Pre-processing</ins>: Initially, the individual tumorous cell and non-tumorous cell nuclei masks are combined to produce a unified image. Due to the unique pixel values of each nucleus, the image needs to be normalized.
 * <ins>Segmentation using U-Net</ins>: For this particular problem, we have employed the U-Net architecture. Specifically, the encoder and decoder components of the U-Net were constructed using the pre-trained ResNet34 model, which we directly imported from the segmentation models library of Keras.
 * <ins>Handling multichannel image data for segmentation</ins>: Specifically,  the resulting predicted image is of size (1024 x 1024 x 3), representing three color channels - red, green, and blue.  In order to facilitate the counting of different types of nuclei, we segregated tumorous nuclei to the red channel, non-tumorous nuclei to the green channel, and background to the blue channel.
